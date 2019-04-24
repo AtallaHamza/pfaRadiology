@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.NotificationPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="479.0" prefWidth="382.0" style="-fx-background-color: #34495e;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controleur.LoginControleur">
+   <children>
+      <NotificationPane fx:id="Notif" prefHeight="42.0" prefWidth="382.0" AnchorPane.bottomAnchor="437.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label layoutX="18.0" layoutY="148.0" prefHeight="42.0" prefWidth="111.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="219.0" prefHeight="42.0" prefWidth="111.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="nom" focusColor="WHITE" labelFloat="true" layoutX="41.0" layoutY="154.0" prefHeight="30.0" prefWidth="300.0" promptText="Nom Utilisateur :" style="-fx-background-color: white;" unFocusColor="BLACK" />
+      <JFXButton layoutX="122.0" layoutY="377.0" onAction="#handlebtn" prefHeight="42.0" prefWidth="139.0" style="-fx-background-color: grey;" text="Connecter" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="86.0" fitWidth="111.0" layoutX="255.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icons/login.png" />
+         </image>
+      </ImageView>
+      <JFXPasswordField fx:id="pass" focusColor="WHITE" labelFloat="true" layoutX="42.0" layoutY="240.0" prefHeight="30.0" prefWidth="300.0" promptText="Mot de passe :" style="-fx-background-color: white;" unFocusColor="BLACK" />
+   </children>
+</AnchorPane>

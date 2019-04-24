@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="605.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controleur.FormulaireSupprimerEmployerController">
+   <children>
+      <Label layoutX="136.0" layoutY="14.0" text="Supprimer Un Employer" textAlignment="CENTER" textFill="#970d50" wrapText="true">
+         <font>
+            <Font name="Berlin Sans FB" size="36.0" />
+         </font>
+      </Label>
+      <ButtonBar layoutX="270.0" layoutY="384.0" prefHeight="57.0" prefWidth="321.0">
+         <buttons>
+            <JFXButton contentDisplay="CENTER" defaultButton="true" onAction="#handleSupprimer" prefHeight="40.0" style="-fx-background-color: lightgreen;" text="Supprimer" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton cancelButton="true" contentDisplay="CENTER" onAction="#handleReset" prefHeight="40.0" style="-fx-background-color: lightgreen;" text="Annuler" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+         </buttons>
+         <padding>
+            <Insets left="40.0" right="40.0" />
+         </padding>
+      </ButtonBar>
+      <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="205.0" layoutY="191.0" text="N°CIN :" textAlignment="CENTER" textFill="#063918" wrapText="true">
+         <opaqueInsets>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </opaqueInsets>
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="cin" layoutX="201.0" layoutY="226.0" prefHeight="27.0" prefWidth="220.0">
+         <font>
+            <Font name="Calibri" size="14.0" />
+         </font>
+      </JFXTextField>
+   </children>
+</AnchorPane>

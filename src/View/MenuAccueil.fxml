@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="140.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controleur.MenuAccueilController">
+   <children>
+      <JFXButton fx:id="btnemployer" alignment="CENTER" contentDisplay="TOP" onAction="#handleemployer" prefHeight="102.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Gestion des employes" textAlignment="CENTER" wrapText="true">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/employetmanagement.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="2.0" left="20.0" right="20.0" top="2.0" />
+         </VBox.margin>
+      </JFXButton>
+      <JFXButton fx:id="btnExamen" alignment="CENTER" contentDisplay="TOP" onAction="#handleExamen" prefHeight="102.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Gestion des exanens" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="2.0" left="20.0" right="20.0" top="2.0" />
+         </VBox.margin>
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8_Pass_Fail_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnSalles" alignment="CENTER" contentDisplay="TOP" onAction="#handleSalles" prefHeight="100.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Gestion des  salles" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="2.0" left="20.0" right="20.0" top="2.0" />
+         </VBox.margin>
+         <graphic>
+            <ImageView fitHeight="41.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8_Hospital_3_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btneMachine" alignment="CENTER" contentDisplay="TOP" onAction="#handleMachine" prefHeight="95.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Gestion des machines" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="2.0" left="20.0" right="20.0" top="2.0" />
+         </VBox.margin>
+         <graphic>
+            <ImageView fitHeight="34.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8_Airport_Security_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnemployer4" alignment="CENTER" contentDisplay="TOP" onAction="#handleemployer" prefHeight="118.0" prefWidth="100.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" text="Gestion des depences /revenus" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="2.0" left="20.0" right="20.0" top="2.0" />
+         </VBox.margin>
+         <graphic>
+            <ImageView fitHeight="34.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/icons8_Rent_48px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</VBox>
