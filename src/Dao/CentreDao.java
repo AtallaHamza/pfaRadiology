@@ -40,7 +40,7 @@ public class CentreDao {
         return true;
     }
 
-    public static void updateCentre(Centre centre) {
+    public static void updateCentre(Centre centre, int centreId) {
         String requete = "UPDATE `Centre` SET `nom`=?,`adress`=?,`email`=?,`fax`=? ,`tel`=? WHERE idCentre=?";
         try {
             PreparedStatement ps = Connexion.getInstance().getConnection().prepareStatement(requete);
@@ -50,7 +50,7 @@ public class CentreDao {
             ps.setString(3, centre.getEmail());
             ps.setLong(4, centre.getFax());
             ps.setLong(5, centre.getTel());
-            ps.setInt(6, centre.getIdCentre());
+            ps.setInt(6, centreId);
 
 
             ps.executeUpdate();

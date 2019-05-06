@@ -116,16 +116,16 @@
         </GridPane>
         <ButtonBar layoutX="326.0" layoutY="380.0" prefHeight="57.0" prefWidth="265.0">
             <buttons>
-                <JFXButton contentDisplay="CENTER" defaultButton="true" prefWidth="55.0" prefHeight="40.0" style="-fx-background-color: lightgreen;" text="Enregistrer" textAlignment="CENTER">
+                <JFXButton contentDisplay="CENTER" defaultButton="true" onAction="#ModifierCentre" prefWidth="55.0" prefHeight="40.0" style="-fx-background-color: lightgreen;" text="Enregistrer" textAlignment="CENTER">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
                 </JFXButton>
-                <JFXButton cancelButton="true" contentDisplay="CENTER"  prefHeight="40.0" style="-fx-background-color: lightgreen;" text="Annuler" textAlignment="CENTER">
+                <!--JFXButton cancelButton="true" contentDisplay="CENTER"  prefHeight="40.0" style="-fx-background-color: lightgreen;" text="Annuler" textAlignment="CENTER">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
-                </JFXButton>
+                </JFXButton-->
             </buttons>
             <padding>
                 <Insets left="40.0" right="40.0" />

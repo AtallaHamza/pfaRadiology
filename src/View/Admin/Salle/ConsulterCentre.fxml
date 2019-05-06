@@ -156,7 +156,7 @@
                 </JFXTextField>
             </children>
         </GridPane>
-        <ButtonBar layoutX="326.0" layoutY="380.0" prefHeight="57.0" prefWidth="265.0">
+        <!--ButtonBar layoutX="326.0" layoutY="380.0" prefHeight="57.0" prefWidth="265.0">
             <buttons>
                 <JFXButton contentDisplay="CENTER" defaultButton="true" prefWidth="55.0" prefHeight="40.0" style="-fx-background-color: lightgreen;" text="Enregistrer" textAlignment="CENTER">
                     <font>
@@ -172,6 +172,6 @@
             <padding>
                 <Insets left="40.0" right="40.0" />
             </padding>
-        </ButtonBar>
+        </ButtonBar-->
     </children>
 </AnchorPane>
