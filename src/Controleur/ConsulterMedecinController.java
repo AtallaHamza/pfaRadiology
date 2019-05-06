@@ -5,6 +5,7 @@
  */
 package Controleur;
 
+import Dao.CalculDao;
 import Model.Admin;
 import Model.Employer;
 import java.net.URL;
@@ -172,6 +173,21 @@ public class ConsulterMedecinController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        
+        int y = 0,x= 0,d= 0;
+        for(int i :CalculDao.ListePrixMateriel()){
+        y=y+i;
+        }
+        for(int i :CalculDao.ListeSalaire()){
+        x=x+i;
+        } 
+        for(int i :CalculDao.ListePrixExamen()){
+        d=d+i;
+        }
+        System.out.println("Prix Materiel  " + y);
+        System.out.println("Liste Salaire  " + x);
+        System.out.println("Liste PrixExamen  " + d);
+
         listMedecin(Admin.findAllDoctors());
 
         Tableau();

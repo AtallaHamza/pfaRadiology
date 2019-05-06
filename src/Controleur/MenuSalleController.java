@@ -45,6 +45,15 @@ public class MenuSalleController implements Initializable {
         mainControler.getMainpane().setContent((Node)FXMLLoader.load(getClass().getClassLoader().getResource("View/Admin/Salle/ConsulterSalles.fxml")));
     
     }
-     
-       
+    @FXML
+    void handleCentre(ActionEvent event) throws IOException  {
+        mainControler.getMainpane().setContent((Node)FXMLLoader.load(getClass().getClassLoader().getResource("View/Admin/Salle/ConsulterCentre.fxml")));
+    
+    }
+    
+      @FXML
+    void ModifierCentre(ActionEvent event) throws IOException  {
+        mainControler.getMainpane().setContent((Node)FXMLLoader.load(getClass().getClassLoader().getResource("View/Admin/Salle/ModifierCentre.fxml")));
+    
+    } 
 }

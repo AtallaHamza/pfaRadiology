@@ -52,7 +52,15 @@ public class AdminControleur implements Initializable {
         st.show();
 
     }
+    
+    @FXML
+    void handleCentre(ActionEvent event) throws IOException {
+        
+        menu.getChildren().removeAll(menu.getChildren());
+        menu.getChildren().add((Node) FXMLLoader.load(getClass().getClassLoader().getResource("View/Admin/MenuCentre.fxml")));
 
+    }
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         MenuAccueilController.init(this);

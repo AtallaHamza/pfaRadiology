@@ -5,6 +5,8 @@
  */
 package Controleur;
 
+import Controleur.Admin.Materiel.MenuDepenseRevenueController;
+import Controleur.Admin.Salle.MenuCentreController;
 import Controleur.Medecin.InterfaceMedecinController;
 import Controleur.Medecin.MenuMedecinController;
 import Controleur.Secretaire.Fiches.MenuGestionFichesController;
@@ -76,7 +78,13 @@ public class MenuAccueilController implements Initializable {
        mainControler.getMenu().getChildren().removeAll(mainControler.getMenu().getChildren());
        mainControler.getMenu().getChildren().add((Node)FXMLLoader.load(getClass().getClassLoader().getResource("View/MenuGestionEmployer.fxml")));
     }
-    
+    /*
+    @FXML
+    void handleCentre(ActionEvent event) throws IOException {
+       MenuCentreController.init(mainControler);
+       mainControler.getMenu().getChildren().removeAll(mainControler.getMenu().getChildren());
+       mainControler.getMenu().getChildren().add((Node)FXMLLoader.load(getClass().getClassLoader().getResource("View/Admin/MenuCentre.fxml")));
+    }*/
     @FXML
     void handleSalles(ActionEvent event) throws IOException {
        MenuSalleController.init(mainControler);
@@ -98,6 +106,12 @@ public class MenuAccueilController implements Initializable {
        mainControler.getMenu().getChildren().add((Node)FXMLLoader.load(getClass().getClassLoader().getResource("View/Admin/MenuMaterielle.fxml")));
     }
     
+    @FXML
+    void handleDepenses(ActionEvent event) throws IOException {
+       MenuDepenseRevenueController.init(mainControler);
+       mainControler.getMenu().getChildren().removeAll(mainControler.getMenu().getChildren());
+       mainControler.getMenu().getChildren().add((Node)FXMLLoader.load(getClass().getClassLoader().getResource("View/Admin/MenuDepenseRevenue.fxml")));
+    }
     @FXML
     void handleRDV(ActionEvent event) throws IOException {
        MenuGestionRDVController.init(SecretaireControler);

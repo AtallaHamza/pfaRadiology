@@ -62,14 +62,14 @@ public class LoginControleur implements Initializable {
 
                     Scene scene = new Scene((AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("View/InterfaceSecretaire.fxml")));
                     st.setScene(scene);
-                    st.setTitle("BIENVENUE ADMINISTRATEUR");
+                    st.setTitle("BIENVENUE SECRÉTAIRE ");
                     st.setResizable(false);
                     st.show();
                 } else if (rs.getString(4).equals("A")) {
                     
                     Scene scene = new Scene((AnchorPane) FXMLLoader.load(getClass().getClassLoader().getResource("View/InterfaceAdmin.fxml")));
                     st.setScene(scene);
-                    st.setTitle("BIENVENUE SECRÉTAIRE");
+                    st.setTitle("BIENVENUE ADMINISTRATEUR ");
                     st.setResizable(false);
                     st.show();
                 }else if (rs.getString(4).equals("M")) {
