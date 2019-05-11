@@ -122,7 +122,12 @@ static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
             ResultSet resultat = ps.executeQuery();
             while (resultat.next()) {
-                examen.setIdExamen(resultat.getInt(1));
+                examen.setIdExamen(resultat.getInt(1));      
+                examen.setNom(resultat.getString(2));       
+                examen.setResultat(resultat.getString(5));
+                examen.setDateExamen(resultat.getDate(6));
+
+
               
             }
             return examen;

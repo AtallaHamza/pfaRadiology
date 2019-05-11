@@ -56,6 +56,10 @@ public class MenuGestionFichesController implements Initializable {
     void handleSupprimerFiche(ActionEvent event) throws IOException {
         mainControler.getMainpane().setContent((Node)FXMLLoader.load(getClass().getClassLoader().getResource("View/Secretaie/Fiches/FormulaireSupprimerFiche.fxml")));
     }
+    @FXML
+    void handleImprimerFiches(ActionEvent event) throws IOException {
+        mainControler.getMainpane().setContent((Node)FXMLLoader.load(getClass().getClassLoader().getResource("View/Secretaire/Fiches/ImprimerFche.fxml")));
+    }
     
     public static void init(SecretaireControleur controleur){
         mainControler=controleur;

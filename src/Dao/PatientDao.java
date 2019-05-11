@@ -121,7 +121,7 @@ public class PatientDao {
     }
 
     public static Patient findPatientById(int id) {
-        Patient examen = new Patient();
+        Patient p = new Patient();
         String requete = "select * from Patient where idPatient=?";
         try {
             PreparedStatement ps = Connexion.getInstance().getConnection().prepareStatement(requete);
@@ -129,12 +129,15 @@ public class PatientDao {
 
             ResultSet resultat = ps.executeQuery();
             while (resultat.next()) {
-                examen.setIdPatient(resultat.getInt(1));
-                examen.setNom(resultat.getString(2));
-                examen.setPrenom(resultat.getString(3));
+                p.setIdPatient(resultat.getInt(1));
+                p.setNom(resultat.getString(2));
+                p.setPrenom(resultat.getString(3));
+                p.setDate(resultat.getDate(6));
+                p.setTel(resultat.getLong(5));
+                p.setGenre(resultat.getString(4));
 
             }
-            return examen;
+            return p;
 
         } catch (SQLException ex) {
             System.out.println("erreur lors de la recherche du l'Examen id " + ex.getMessage());

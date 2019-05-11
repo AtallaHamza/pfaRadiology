@@ -5,6 +5,7 @@
  */
 package Controleur;
 
+import Dao.PatientDao;
 import Model.Admin;
 import Model.Employer;
 import Model.Medecin;
@@ -14,11 +15,15 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import java.io.File;
 import java.net.URL;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.function.UnaryOperator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -135,13 +140,13 @@ public class FormulaireAjoutEmployerController implements Initializable {
         return (nom == null || prenom.length() == 0 || email.length() == 0 || date == null || adress.length() == 0 || login.length() == 0 || pass.length() == 0 ? false : true);
     }
 
-    private void addSecretaire() {
+    private void addSecretaire()  {
 
-        if (this.cin.getText().length() == 0) {
-            Notif.show("CIN doit etre non null !");
+        if (this.cin.getText().length() == 0 || this.cin.getText().length() != 8) {
+            Notif.show("CIN doit etre non null et de longueur 8  !");
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
-            alert.setContentText("CIN doit etre non null !");
+            alert.setContentText("CIN doit etre non null et de longueur 8  !");
             alert.showAndWait();
         } else {
             long cinForm = Long.parseLong(this.cin.getText());
@@ -159,14 +164,26 @@ public class FormulaireAjoutEmployerController implements Initializable {
                         int salaireForm = Integer.parseInt(this.salaire.getText());
                         long tel = Long.valueOf(this.tele.getText());
                         Date d = Date.valueOf(date.getValue());
+                        if ((LocalDate.now().getYear() - date.getValue().getYear()) <= 60 && (LocalDate.now().getYear() - date.getValue().getYear()) >= 18) {
 
-                        Secretaire s = new Secretaire(cinForm, nomForm, prenomForm, emailForm, adressForm, d, tel, salaireForm, loginForm, passForm);
+                            Secretaire s = new Secretaire(cinForm, nomForm, prenomForm, emailForm, adressForm, d, tel, salaireForm, loginForm, passForm);
 
-                        Admin.AjouterEmployer(s);
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setHeaderText(null);
-                        alert.setContentText("Secretaire ajoutée avec succès");
-                        alert.showAndWait();
+                            Admin.AjouterEmployer(s);
+                            
+
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setHeaderText(null);
+                            alert.setContentText("Secretaire ajoutée avec succès");
+                            alert.showAndWait();
+                        } else {
+
+                            Notif.show("DATE DE NAISSANCE doit etre non null et entre 18 et 60  !");
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setHeaderText(null);
+                            alert.setContentText("DATE DE NAISSANCE doit etre non null et entre 18 et 60 !");
+                            alert.showAndWait();
+                        }
+
                     } else {
                         Notif.show("Formulaire invalide !! ");
                         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -194,11 +211,11 @@ public class FormulaireAjoutEmployerController implements Initializable {
     }
 
     private void addTechnicien() {
-        if (this.cin.getText().length() == 0) {
-            Notif.show("CIN doit etre non null !");
+        if (this.cin.getText().length() == 0 || this.cin.getText().length() != 8) {
+            Notif.show("CIN doit etre non null et de longueur 8  !");
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
-            alert.setContentText("CIN doit etre non null !");
+            alert.setContentText("CIN doit etre non null et de longueur 8  !");
             alert.showAndWait();
         } else {
             long cinForm = Long.parseLong(this.cin.getText());
@@ -217,13 +234,24 @@ public class FormulaireAjoutEmployerController implements Initializable {
                         long tel = Long.valueOf(this.tele.getText());
                         Date d = Date.valueOf(date.getValue());
 
-                        Technicien s = new Technicien(cinForm, nomForm, prenomForm, emailForm, adressForm, d, tel, salaireForm, loginForm, passForm);
+                        if ((LocalDate.now().getYear() - date.getValue().getYear()) <= 60 && (LocalDate.now().getYear() - date.getValue().getYear()) >= 18) {
 
-                        Admin.AjouterEmployer(s);
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setHeaderText(null);
-                        alert.setContentText("Secretaire ajoutée avec succès");
-                        alert.showAndWait();
+                            Technicien s = new Technicien(cinForm, nomForm, prenomForm, emailForm, adressForm, d, tel, salaireForm, loginForm, passForm);
+
+                            Admin.AjouterEmployer(s);
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setHeaderText(null);
+                            alert.setContentText("Technicien ajouté avec succès");
+                            alert.showAndWait();
+                        } else {
+
+                            Notif.show("DATE DE NAISSANCE doit etre non null et entre 18 et 60  !");
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setHeaderText(null);
+                            alert.setContentText("DATE DE NAISSANCE doit etre non null et entre 18 et 60 !");
+                            alert.showAndWait();
+                        }
+
                     } else {
                         Notif.show("Formulaire invalide !! ");
                         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -250,11 +278,11 @@ public class FormulaireAjoutEmployerController implements Initializable {
     }
 
     private void addMedecin() {
-        if (this.cin.getText().length() == 0) {
-            Notif.show("CIN doit etre non null !");
+        if (this.cin.getText().length() == 0 || this.cin.getText().length() != 8) {
+            Notif.show("CIN doit etre non null et de longueur 8  !");
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
-            alert.setContentText("CIN doit etre non null !");
+            alert.setContentText("CIN doit etre non null et de longueur 8  !");
             alert.showAndWait();
         } else {
             long cinForm = Long.parseLong(this.cin.getText());
@@ -272,14 +300,22 @@ public class FormulaireAjoutEmployerController implements Initializable {
                         int salaireForm = Integer.parseInt(this.salaire.getText());
                         long tel = Long.valueOf(this.tele.getText());
                         Date d = Date.valueOf(date.getValue());
+                        if ((LocalDate.now().getYear() - date.getValue().getYear()) <= 60 && (LocalDate.now().getYear() - date.getValue().getYear()) >= 18) {
+                            Medecin s = new Medecin(cinForm, nomForm, prenomForm, emailForm, adressForm, d, tel, salaireForm, loginForm, passForm);
 
-                        Medecin s = new Medecin(cinForm, nomForm, prenomForm, emailForm, adressForm, d, tel, salaireForm, loginForm, passForm);
+                            Admin.AjouterEmployer(s);
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setHeaderText(null);
+                            alert.setContentText("Medecin ajouté avec succès");
+                            alert.showAndWait();
+                        } else {
 
-                        Admin.AjouterEmployer(s);
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setHeaderText(null);
-                        alert.setContentText("Secretaire ajoutée avec succès");
-                        alert.showAndWait();
+                            Notif.show("DATE DE NAISSANCE doit etre non null et entre 18 et 60  !");
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setHeaderText(null);
+                            alert.setContentText("DATE DE NAISSANCE doit etre non null et entre 18 et 60 !");
+                            alert.showAndWait();
+                        }
                     } else {
                         Notif.show("Formulaire invalide !! ");
                         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -288,10 +324,10 @@ public class FormulaireAjoutEmployerController implements Initializable {
                         alert.showAndWait();
                     }
                 } else {
-                    Notif.show("DATE DE NAISSANCE doit etre non null !");
+                    Notif.show("DATE DE NAISSANCE doit etre non null et entre 18 et 60  !");
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setHeaderText(null);
-                    alert.setContentText("DATE DE NAISSANCE doit etre non null!");
+                    alert.setContentText("DATE DE NAISSANCE doit etre non null et entre 18 et 60 !");
                     alert.showAndWait();
                 }
 
@@ -304,5 +340,4 @@ public class FormulaireAjoutEmployerController implements Initializable {
             }
         }
     }
-
 }
