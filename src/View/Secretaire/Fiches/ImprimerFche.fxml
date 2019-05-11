@@ -23,7 +23,7 @@
     <children>
         <NotificationPane fx:id="Notif" prefHeight="42.0" prefWidth="382.0" AnchorPane.bottomAnchor="437.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
 
-        <Label layoutX="136.0" layoutY="14.0" text="Ajouter Un RDV" textAlignment="CENTER" textFill="#970d50" wrapText="true">
+        <Label layoutX="136.0" layoutY="14.0" text="Imprimer Fiche" textAlignment="CENTER" textFill="#970d50" wrapText="true">
             <font>
                 <Font name="Berlin Sans FB" size="36.0" />
             </font>
